@@ -55,21 +55,23 @@ ol {
 }
 
 .content {
-  display: flex;
-  margin: 0 30px;
-  gap: 30px;
-  inline-size: 100%;
-  border: 1px solid rgb(255, 0, 0);
+  display: grid;
+  grid-template-columns: 711px 419px;
+  column-gap: 30px;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .result {
-  align-self: end;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .result__video-container {
   position: relative;
-  inline-size: 711px;
-  margin: 0 0 11px;                    /* отступ нижний оставить, рекомендация проекта */
+  height: 386px;
+  margin: 0 0 11px;              /* отступ нижний оставить, рекомендация проекта */
   border: 1px solid yellow;
 }
 
@@ -78,32 +80,7 @@ ol {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  
-  border: 1px solid rgb(0, 119, 255);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .search-form {
   display: flex;
@@ -115,14 +92,27 @@ ol {
 .search-form__fieldset-title {
   font-weight: 400;
   font-size: 18px;
+
 }
 
 .search-form__fieldset {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  border: none;
+
+  border: 1px solid red;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 .search-form__label:focus {
   border: none;  
@@ -238,11 +228,6 @@ ol {
 .more-button {
   margin-bottom: 8px;
 }
-
-
-
-
-
 
 
 
