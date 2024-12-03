@@ -51,6 +51,7 @@ ol {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  
 }
 
 .content {
@@ -58,29 +59,57 @@ ol {
   margin: 0 30px;
   gap: 30px;
   inline-size: 100%;
+  border: 1px solid rgb(255, 0, 0);
 }
 
 .result {
   align-self: end;
 }
 
-.result__video {
-  inline-size: 100%;
-  block-size: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
 .result__video-container {
   position: relative;
   inline-size: 711px;
-  margin: 0 0 11px;
+  margin: 0 0 11px;                    /* отступ нижний оставить, рекомендация проекта */
+  border: 1px solid yellow;
 }
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  
+  border: 1px solid rgb(0, 119, 255);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .search-form {
   display: flex;
   align-items: center;
   gap: 40px;
+  
 }
 
 .search-form__fieldset-title {
@@ -109,14 +138,15 @@ ol {
 }
 
 .search-form__label:has(:focus-visible) {
-  border: 1px solid white;
+  outline: 1px solid white;
 }
 
-.search-form__label:hover {
+.search-form__label-text:hover {
   text-decoration: underline;
 }
 
 .search-form__textfield {
+  appearance: none;
   border-top: 1px solid #FFF;
   border-right: none;
   border-bottom: 1px solid #FFF;
@@ -127,7 +157,7 @@ ol {
   font-weight: inherit;
   font-size: inherit;
   background-color: transparent;
-  inline-size: 225px;
+  min-width: 225px;
 }
 
 .search-form__textfield::placeholder {
@@ -209,6 +239,16 @@ ol {
   margin-bottom: 8px;
 }
 
+
+
+
+
+
+
+
+
+
+
 .title {
   padding: 0 0 30px;
   color: #FFF;
@@ -219,15 +259,29 @@ ol {
   text-transform: uppercase;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .content__accent {
   color: #545050;
 }
 
 .content__list {
   position: relative;
-  overflow-y: scroll;
   block-size: 298px;
-  scrollbar-width: none;
+  overflow: auto;
+  border: 1px solid white;
 }
 
 .content__list-item:not(:last-child) {
@@ -242,6 +296,7 @@ ol {
 .content__card-link {
   display: block;
   margin: 2px;
+  text-decoration: none;
 }
 
 .content__card-link:active {
@@ -253,11 +308,15 @@ ol {
 }
 
 .content__card-link:focus {
-  border: 1px solid white;
+  outline: none;
 }
 
 .content__card-link:focus-visible {
   outline: 1px solid #FFF;
+}
+
+.content__card-link_current:active {
+  background-color: #545050;
 }
 
 .content__video-card {
@@ -265,17 +324,6 @@ ol {
   justify-content: space-between;
 }
 
-.content__video-card:active {
-  background-color: #545050;
-}
-
-.content__video-card:focus {
-  border: 1px solid white;
-}
-
-.content__video-card:focus-visible {
-  border: 1px solid white
-}
 .content__video-card-title {
   padding: 2px 2px 5px;
   color: #FFF;
@@ -285,6 +333,10 @@ ol {
   line-height: 1;
   text-transform: uppercase;
   hyphens: auto;
+  max-width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .content__video-card-description-container {
